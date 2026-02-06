@@ -26,12 +26,12 @@ This is an FTC (FIRST Tech Challenge) Robot Controller codebase for the 2025-202
 
 - **FtcRobotController/**: Official FTC SDK library module (rarely modified)
 - **TeamCode/**: Custom team robot code (primary development area)
-  - **Stephon/**: Main robot architecture (production framework)
+  - **Frank/**: Main robot architecture (production framework)
   - **SuckySucky/**: Alternative simpler implementation for testing
   - **GoBildaPinpoint/**: goBILDA Pinpoint Odometry driver
   - **UtilClasses/**: Shared utilities
 
-## Key Architecture: Stephon Framework
+## Key Architecture: Frank Framework
 
 The primary robot architecture follows a **component-based, object-oriented pattern**:
 
@@ -42,7 +42,7 @@ The primary robot architecture follows a **component-based, object-oriented patt
 - Gamepad assignments: gamepad1 → drivetrain, gamepad2 → shooter
 
 ### Hardware Components
-Located in `TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Stephon/hardware/`:
+Located in `TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Frank/hardware/`:
 
 - **Drivetrain.java**: 4-wheel mecanum drive (435 RPM motors)
   - Tank drive via joysticks, strafing via triggers
@@ -56,7 +56,7 @@ Located in `TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Stephon/hardwa
 - **Tube.java**: Ball storage system (in development)
 
 ### Subsystems
-Located in `TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Stephon/subsystems/`:
+Located in `TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Frank/subsystems/`:
 
 - **VisionSystem.java**: AprilTag detection using FTC Vision SDK
   - Webcam integration (640×480 resolution)
@@ -145,7 +145,7 @@ camera = hardwareMap.get(WebcamName.class, "Webcam 1");
 
 ## Adding New Hardware Components
 
-1. Create a new class extending `Hardware` in `Stephon/hardware/`
+1. Create a new class extending `Hardware` in `Frank/hardware/`
 2. Implement `mainLoop(Gamepad gamepad)` method
 3. Add hardware initialization in constructor
 4. Add instance to `Robot.java` and initialize in Robot constructor
@@ -198,11 +198,11 @@ A simpler, monolithic implementation in `SuckySucky/SuckySuckyTeleOp.java`:
 - All logic in single file (no abstraction layers)
 - Direct hardware access
 - Use for quick testing and prototyping
-- Same hardware as Stephon configuration
+- Same hardware as Frank configuration
 
 ## Robot Configuration
 
-**Robot Name**: "Stephon" (Team 8421, DECODE 2025-2026 Season)
+**Robot Name**: "Frank" (Team 8421, DECODE 2025-2026 Season)
 
 **Current Status**:
 - TeleOp fully functional with mecanum drive
